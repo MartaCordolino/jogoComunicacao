@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interface de Comunicação</title>
+    <style>
+        body {
+            margin: 0;
+            background-image: url("https://www.criancasespeciais.com.br/wp-content/uploads/2023/03/dados-780x470.png");
+            background-repeat: no-repeat; /* Impede que a imagem se repita */
+            background-size: cover; /* Faz com que a imagem cubra toda a tela */
+            font-family: Arial, sans-serif;
+            text-align: center; 
+        }
+        h1 {
+            color:rgb(35, 35, 245);
+            font-size: 50px; 
+            display: inline-block; /* Ajusta a largura ao conteúdo */
+           /* border: 2px solid #000; /* Define a borda */
+            padding:10px; /* Espaço entre o texto e a borda */
+            /*border-radius: 8px; /* Deixa as bordas arredondadas (opcional) */
+        }
+        #content-card {
+            background-color: #f1eded; /* Fundo sólido do card */
+            border-radius: 15px;
+            padding: 30px;
+            width: 90%;
+            max-width: 700px;
+            margin: 20px auto;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3); /* Sombra para destaque */
+        }
+       
+        #icon-container {
+            margin: 20px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .icon {
+            margin: 15px;
+            cursor: pointer;
+            width: 120px;
+            height: 120px;
+        }
+        .icon:hover {
+            transform: scale(1.1); /* Aumenta o ícone em 10% quando o mouse está sobre ele */
+        }
+        #message {
+            margin: 20px 0;
+            font-size: 24px;
+            font-weight: bold;
+            color:rgb(25, 25, 26);
+            transition: transform 0.3s ease; /* Animação de escala suave */
+        }
+        #clearButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: rgb(38, 105, 248);
+            color: rgb(241, 242, 245);
+            border: none;
+            border-radius: 5px;
+        }
+        #clearButton:hover {
+            background-color: #709af5;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Interface de Comunicação Visual</h1>
+    <div id ="content-card">
+     <div id="icon-container">
+        <img src="icones/agua.png" class="icon" alt="Água" onclick="addToMessage('Eu quero água.')">
+        <img src="icones/comida.png" class="icon" alt="Comida" onclick="addToMessage('Eu quero comida.')">
+        <img src="icones/banheiro.png" class="icon" alt="Banheiro" onclick="addToMessage('Eu preciso ir ao banheiro.')">
+        <img src="icones/descanso.png" class="icon" alt="Descanso" onclick="addToMessage('Eu preciso descansar.')">
+    </div>
+
+    <div id="message">Clique em um ícone para formar uma frase.</div>
+    </div>
+    <button id="clearButton" onclick="clearMessage()"><strong>Limpar Frase</strong></button>
+
+    <script>
+        function addToMessage(text) {
+            const messageDiv = document.getElementById('message');
+            messageDiv.innerText = text;
+        }
+
+        function clearMessage() {
+            document.getElementById('message').innerText = 'Clique em um ícone para formar uma frase.';
+        }
+    </script>
+
+</body>
+</html>
